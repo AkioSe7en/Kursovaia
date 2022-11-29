@@ -14,7 +14,7 @@ public class ApplicationContext : DbContext
     {
         modelBuilder.Entity<Vacancy>().Property(p => p.Salary).HasPrecision(6, 2);
         
-        modelBuilder.Entity<Applicants>().HasKey(u => u.Id_Soisk);
+        modelBuilder.Entity<Applicants>().HasKey(u => u.Id_App);
         modelBuilder.Entity<Employers>().HasKey(u => u.ID_Rab);
         modelBuilder.Entity<Diploma>().HasKey(u => u.ID_Dipl);
         modelBuilder.Entity<Professions>().HasKey(u=>u.Prof_Name);
@@ -23,8 +23,8 @@ public class ApplicationContext : DbContext
         modelBuilder.Entity<Employers>().HasMany(p => p.Vacancies); // 1 emp - М vac
         modelBuilder.Entity<Applicants>().HasMany(p => p.Diplomas); // 1 app - М dip
         
-        modelBuilder.Entity<Professions>().HasMany(p => p.Applicants);
-        modelBuilder.Entity<Professions>().HasMany(p => p.Vacancy);
+        // modelBuilder.Entity<Professions>().HasMany(p => p.Applicants);
+        // modelBuilder.Entity<Professions>().HasMany(p => p.Vacancy);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

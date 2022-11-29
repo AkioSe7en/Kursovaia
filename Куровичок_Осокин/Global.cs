@@ -16,3 +16,4 @@ global using System.Windows.Media;
 global using System.Windows.Media.Imaging;
 global using System.Windows.Navigation;
 global using System.Windows.Shapes;
+global using System.ComponentModel.DataAnnotations;

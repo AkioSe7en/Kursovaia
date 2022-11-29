@@ -2,7 +2,7 @@
 
 public class Diploma
 {
-    public Guid ID_Rab { get; set; }
+    public Applicants Applicants { get; set; }
     public string ID_Dipl { get; set; }
     public string Institution { get; set; }
     public string Specialties { get; set; }

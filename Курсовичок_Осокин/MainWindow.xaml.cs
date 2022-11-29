@@ -1,6 +1,4 @@
-﻿using Куровичок_Осокин.Tables;
-
-namespace Куровичок_Осокин
+﻿namespace Курсовичок_Осокин
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

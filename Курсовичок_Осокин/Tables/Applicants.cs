@@ -1,5 +1,5 @@
-﻿namespace Куровичок_Осокин.Tables;
-
+﻿namespace Курсовичок_Осокин.Tables;
+    
 public class Applicants
 {
     public Guid Id_App { get; set; }

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Куровичок_Осокин", "Куровичок_Осокин\Куровичок_Осокин.csproj", "{E19C854A-2E0C-4EC2-87F8-3E52FD1D4C23}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Курсовичок_Осокин", "Курсовичок_Осокин\Курсовичок_Осокин.csproj", "{E19C854A-2E0C-4EC2-87F8-3E52FD1D4C23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿namespace Куровичок_Осокин.Tables;
+﻿namespace Курсовичок_Осокин.Tables;
 
 public class Professions
 {

@@ -11,10 +11,4 @@ public class Employers
     public bool Activ { get; }
     public DateTime? DateDelete { get; set; }
     public List<Vacancy> Vacancies { get; set; }
-    // public ICollection<Vacancy> Vacancies { get; set; }
-    // public Employers()
-    // {
-    //     Vacancies = new List<Vacancy>();
-    // }
-    
-    }
+}

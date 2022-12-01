@@ -13,13 +13,4 @@ public class Applicants
 
     public List<Diploma> Diplomas { get; set; } = new();
     public Professions Professions { get; set; }
-
-    // public ICollection<Diploma> Diplomas { get; set; }
-    // public ICollection<Professions> ProfessionsCollection { get; set; }
-    //
-    // public Applicants()
-    // {
-    //     Diplomas = new List<Diploma>(); 
-    //     ProfessionsCollection = new List<Professions>();
-    // }
 }

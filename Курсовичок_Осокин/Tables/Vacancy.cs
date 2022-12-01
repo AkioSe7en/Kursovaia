@@ -7,11 +7,4 @@ public class Vacancy
     public Employers Employers { get; set; }
     public DateTime Date_Create { get; }
     public double Salary { get; set; }
-    
-    
-    // public ICollection<Professions> ProfessionsCollection { get; set; }
-    // public Vacancy()
-    // {
-    //     ProfessionsCollection = new List<Professions>();
-    // }
 }

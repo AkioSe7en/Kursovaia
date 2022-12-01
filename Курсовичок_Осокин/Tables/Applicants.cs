@@ -8,11 +8,11 @@ public class Applicants
     public string Otchestvo { get; set; }
     [MaxLength(11, ErrorMessage = "Максимальное количество символов")] public string? Phone { get; set; }
     public string? Email { get; set; }
-    public string? Prof_Name { get; set; }
     public bool Activ { get; set; }
     public DateTime? DateDelete { get; set; }
 
     public List<Diploma> Diplomas { get; set; } = new();
+    public Professions Professions { get; set; }
 
     // public ICollection<Diploma> Diplomas { get; set; }
     // public ICollection<Professions> ProfessionsCollection { get; set; }

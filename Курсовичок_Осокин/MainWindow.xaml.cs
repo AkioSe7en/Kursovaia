@@ -89,27 +89,32 @@ namespace Курсовичок_Осокин
 
         private void Zap2_OnClick(object sender, RoutedEventArgs e)
         {
-            //  throw new NotImplementedException();
+            Zapros2 zap2 = new Zapros2();
+            zap2.Show();
         }
 
         private void Zap3_OnClick(object sender, RoutedEventArgs e)
         {
-          //  throw new NotImplementedException();
+            Zapros3 zap3 = new Zapros3();
+            zap3.Show();
         }
 
         private void Zap4_OnClick(object sender, RoutedEventArgs e)
         {
-          //  throw new NotImplementedException();
+            Zapros4 zap4 = new Zapros4();
+            zap4.Show();
         }
 
         private void Zap5_OnClick(object sender, RoutedEventArgs e)
         {
-           // throw new NotImplementedException();
+            Zapros5 zap5 = new Zapros5();
+            zap5.Show();
         }
 
         private void Zap6_OnClick(object sender, RoutedEventArgs e)
         {
-           // throw new NotImplementedException();
+            Zapros6 zap6 = new Zapros6();
+            zap6.Show();
         }
     }
 }

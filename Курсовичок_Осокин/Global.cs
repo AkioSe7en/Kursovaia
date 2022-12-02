@@ -18,3 +18,4 @@ global using System.Windows.Navigation;
 global using System.Windows.Shapes;
 global using System.ComponentModel.DataAnnotations;
 global using Курсовичок_Осокин.Tables;
+global using Курсовичок_Осокин;

@@ -1,4 +1,5 @@
 ﻿using Куровичок_Осокин.Requests;
+using Куровичок_Осокин.TempWindows;
 
 namespace Курсовичок_Осокин
 {
@@ -53,6 +54,7 @@ namespace Курсовичок_Осокин
             db.SaveChanges();
 
             Employers employers = new Employers { FIO = "Куксин П.С.", Name_Org = "ООО Куриное царство" };
+            
             Vacancy vacancy = new Vacancy
             {
                 Employers = employers, Professions = db.Professions.Where(u => u.Prof_Name == "Кассир").ToList()[0],
@@ -83,8 +85,9 @@ namespace Курсовичок_Осокин
 
         private void Zap1_OnClick(object sender, RoutedEventArgs e)
         {
-            Zapros1 zap1 = new Zapros1();
-            zap1.Show();
+
+            TempZap1 tempZap1 = new TempZap1();
+            tempZap1.ShowDialog();
         }
 
         private void Zap2_OnClick(object sender, RoutedEventArgs e)

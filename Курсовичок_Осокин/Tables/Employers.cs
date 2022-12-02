@@ -27,4 +27,5 @@ public class Employers
     }
     public DateTime? DateDelete { get; set; }
     public List<Vacancy> Vacancies { get; set; }
+    
 }

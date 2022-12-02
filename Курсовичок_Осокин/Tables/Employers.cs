@@ -8,7 +8,23 @@ public class Employers
     public string? Email { get; set; }
     public string? Address { get; set; }
     public string Name_Org { get; set; } = null!;
-    public bool Activ { get; }
+    private bool activ = true;
+    public bool Activ
+    {
+        get { return activ;}
+        set
+        {
+            activ = value;
+            if (activ == false)
+            {
+                DateDelete = DateTime.Now;
+            }
+            else
+            {
+                DateDelete = null;
+            }
+        }
+    }
     public DateTime? DateDelete { get; set; }
     public List<Vacancy> Vacancies { get; set; }
 }

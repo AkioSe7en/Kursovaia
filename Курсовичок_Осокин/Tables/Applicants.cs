@@ -8,7 +8,24 @@ public class Applicants
     public string Otchestvo { get; set; }
     [MaxLength(11, ErrorMessage = "Максимальное количество символов")] public string? Phone { get; set; }
     public string? Email { get; set; }
-    public bool Activ { get; set; }
+    private bool activ = true;
+
+    public bool Activ
+    {
+        get { return activ;}
+        set
+        {
+            activ = value;
+            if (activ == false)
+            {
+                DateDelete = DateTime.Now;
+            }
+            else
+            {
+                DateDelete = null;
+            }
+        }
+    }
     public DateTime? DateDelete { get; set; }
 
     public List<Diploma> Diplomas { get; set; } = new();

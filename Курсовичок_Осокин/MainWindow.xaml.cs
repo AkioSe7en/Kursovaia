@@ -1,4 +1,6 @@
-﻿namespace Курсовичок_Осокин
+﻿using Куровичок_Осокин.Requests;
+
+namespace Курсовичок_Осокин
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,7 +27,7 @@
             }
             else
             {
-                /*  var Prof = new List<Professions>
+                  var Prof = new List<Professions>
             {
                 new() { Prof_Name = "Кассир-администратор" },
                 new() { Prof_Name = "Кассир" },
@@ -38,7 +40,7 @@
 
             Applicants User = new Applicants
             {
-                Familia = "Осокин", Name = "Тимофей", Otchestvo = "Сергеевич", Email = "tim_osokin@mail.ru",
+                Familia = "Осокин", Name = "Тимофей", Otchestvo = "Сергеевич", Email = "tim_osokin@mail.ru", Activ = false,
                 Professions = db.Professions.Where(u => u.Prof_Name == "Кассир-администратор").ToList()[0]
             };
             Diploma Diplom = new Diploma
@@ -57,7 +59,8 @@
                 Salary = 25000.00
             };
             db.Employers.Add(employers);
-            db.Vacancy.Add(vacancy);*/
+            db.Vacancy.Add(vacancy);
+                
                 db.SaveChanges();
                 CheckBD.Text = "БД создана";
                 MessageBox.Show("БД создана"); 
@@ -78,9 +81,35 @@
             
         }
 
-        private void UIElement_OnFocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        private void Zap1_OnClick(object sender, RoutedEventArgs e)
         {
+            Zapros1 zap1 = new Zapros1();
+            zap1.Show();
+        }
 
+        private void Zap2_OnClick(object sender, RoutedEventArgs e)
+        {
+            //  throw new NotImplementedException();
+        }
+
+        private void Zap3_OnClick(object sender, RoutedEventArgs e)
+        {
+          //  throw new NotImplementedException();
+        }
+
+        private void Zap4_OnClick(object sender, RoutedEventArgs e)
+        {
+          //  throw new NotImplementedException();
+        }
+
+        private void Zap5_OnClick(object sender, RoutedEventArgs e)
+        {
+           // throw new NotImplementedException();
+        }
+
+        private void Zap6_OnClick(object sender, RoutedEventArgs e)
+        {
+           // throw new NotImplementedException();
         }
     }
 }

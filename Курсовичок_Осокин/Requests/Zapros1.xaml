@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Поиск вакансий по наименованию" Height="450" Width="800">
     <Grid>
-   <TextBox Name="TextBox"></TextBox>
+   <DataGrid Name="DataGrid"></DataGrid>
     </Grid>
 </Window>

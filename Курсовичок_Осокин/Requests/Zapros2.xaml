@@ -5,10 +5,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Requests"
         mc:Ignorable="d"
-        Title="Поиск рабоодателей по городу" Height="450" Width="800">
+        Title="Поиск работодателей по городу" Height="450" Width="800">
     <Grid>
-        <DataGrid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="DataGrid" AutoGenerateColumns="False" CellEditEnding="DataGrid_OnCellEditEnding">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="ID" IsReadOnly="True" Binding="{Binding Path=ID_Rab, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="ФИО" Binding="{Binding Path=FIO, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Тел." Binding="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Email" Binding="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Организация" Binding="{Binding Path=Name_Org, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridCheckBoxColumn Header="Активность" Binding="{Binding Path=Activ, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGridTextColumn Header="Дата удаления" IsReadOnly="True" Binding="{Binding Path=DateDelete, UpdateSourceTrigger=PropertyChanged}"/>
+        </DataGrid.Columns>    
         </DataGrid>
+        
+        <Button Grid.Row="1" Click="ButtonBase_OnClick">Update</Button>
     </Grid>
 </Window>

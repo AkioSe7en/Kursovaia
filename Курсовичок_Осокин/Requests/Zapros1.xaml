@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="Поиск вакансий по наименованию" Height="450" Width="800">
     <Grid>
-   <DataGrid Name="DataGrid"></DataGrid>
+        <DataGrid Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID вакансии" IsReadOnly="True" Binding="{Binding Path=Id_Vac, UpdateSourceTrigger=PropertyChanged}"/>
+                <!--<DataGridComboBoxColumn x:Name="Combo123" Header="Вак" DisplayMemberPath="prof.prof_name"></DataGridComboBoxColumn>-->
+                <DataGridTextColumn Header="Вакансия" Binding="{Binding Path=Professions.Prof_Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Зарплата" Binding="{Binding Path=Salary, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Дата создания" IsReadOnly="True" Binding="{Binding Path=Date_Create, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Path=Employers.Name_Org, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Тел." Binding="{Binding Path=Employers.Phone, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=Employers.Email, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Employers.Address, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridCheckBoxColumn Header="Активность" Binding="{Binding Path=Employers.Activ, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>    
+        </DataGrid>
     </Grid>
 </Window>

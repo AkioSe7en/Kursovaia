@@ -53,7 +53,7 @@ namespace Курсовичок_Осокин
             db.Diploma.Add(Diplom);
             db.SaveChanges();
 
-            Employers employers = new Employers { FIO = "Куксин П.С.", Name_Org = "ООО Куриное царство" };
+            Employers employers = new Employers { FIO = "Куксин П.С.", Name_Org = "ООО Куриное царство", Address = "г. Бийск, ул. 8 Марта, дом 16", Email = "p_kocksin@mail.ru", Phone = "+79609776666"};
             
             Vacancy vacancy = new Vacancy
             {
@@ -92,8 +92,8 @@ namespace Курсовичок_Осокин
 
         private void Zap2_OnClick(object sender, RoutedEventArgs e)
         {
-            Zapros2 zap2 = new Zapros2();
-            zap2.Show();
+            TempZap2 tempZap2 = new TempZap2();
+            tempZap2.ShowDialog();
         }
 
         private void Zap3_OnClick(object sender, RoutedEventArgs e)

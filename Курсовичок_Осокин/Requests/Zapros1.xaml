@@ -5,9 +5,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Requests"
         mc:Ignorable="d"
-        Title="Поиск вакансий по наименованию" Height="450" Width="800">
+        Title="Поиск вакансий по наименованию" Height="450" Width="800" MinWidth="400.6">
     <Grid>
-        <DataGrid Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        
+        <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200">Создать запись</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="Delete" Width="200">Удалить запись</Button>
+        
+        <DataGrid Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID вакансии" IsReadOnly="True" Binding="{Binding Path=Id_Vac, UpdateSourceTrigger=PropertyChanged}"/>
                 <!--<DataGridComboBoxColumn x:Name="Combo123" Header="Вак" DisplayMemberPath="prof.prof_name"></DataGridComboBoxColumn>-->
@@ -15,6 +27,7 @@
                 <DataGridTextColumn Header="Зарплата" Binding="{Binding Path=Salary, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Дата создания" IsReadOnly="True" Binding="{Binding Path=Date_Create, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Организация" Binding="{Binding Path=Employers.Name_Org, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="ФИО работодателя" Binding="{Binding Path=Employers.FIO, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Тел." Binding="{Binding Path=Employers.Phone, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Path=Employers.Email, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Employers.Address, UpdateSourceTrigger=PropertyChanged}"/>

@@ -1,4 +1,6 @@
-﻿namespace Куровичок_Осокин.Requests;
+﻿using Куровичок_Осокин.TempWindows;
+
+namespace Куровичок_Осокин.Requests;
 
 public partial class Zapros1 : Window
 {
@@ -29,6 +31,13 @@ public partial class Zapros1 : Window
     private void DataGrid_OnRowEditEnding(object? sender, DataGridRowEditEndingEventArgs e)
     {
         db.SaveChanges();
+        CheckBD();
+    }
+
+    private void Create_OnClick(object sender, RoutedEventArgs e)
+    {
+        Zap1_Add add = new Zap1_Add(db);
+        add.ShowDialog();
         CheckBD();
     }
 }

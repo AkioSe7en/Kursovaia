@@ -61,6 +61,9 @@ namespace Курсовичок_Осокин
                 Salary = 25000.00
             };
             db.Employers.Add(employers);
+            employers = new Employers{ FIO = "Кравцов И.Д.", Name_Org = "Соц защита", Address = "г. Бийск, ул. Ленина, дом 236", Phone = "+79609667755"};
+            db.Employers.Add(employers);
+            
             db.Vacancy.Add(vacancy);
                 
                 db.SaveChanges();

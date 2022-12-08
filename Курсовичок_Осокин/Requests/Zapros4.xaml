@@ -7,8 +7,29 @@
         mc:Ignorable="d"
         Title="Активные работодатели" Height="450" Width="800">
     <Grid>
-        <DataGrid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        
+        <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200">Создать запись</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200">Удалить запись</Button>
+        
+        <DataGrid Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" IsReadOnly="True" Binding="{Binding Path=ID_Rab, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Path=FIO, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Тел." Binding="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Path=Email, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Адрес" Binding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Path=Name_Org, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridCheckBoxColumn Header="Активность" Binding="{Binding Path=Activ, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Дата удаления" IsReadOnly="True" Binding="{Binding Path=DateDelete, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>    
         </DataGrid>
     </Grid>
 </Window>

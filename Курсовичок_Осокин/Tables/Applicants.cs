@@ -2,7 +2,7 @@
     
 public class Applicants
 {
-    public Guid Id_App { get; set; }
+    public Guid ID_App { get; set; }
     public string Familia { get; set; }
     public string Name { get; set; }
     public string Otchestvo { get; set; }

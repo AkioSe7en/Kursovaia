@@ -31,20 +31,6 @@ public partial class Zap1_Add : Window
         db.SaveChanges();
         DialogResult = true;
     }
-
-    private void Prof_Name_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-        // var a =(Professions)Prof_Name.SelectedItem;
-        // if (db.Professions.Find(a)==null)
-        // {
-        //     MessageBox.Show("Вы неверно ввели профессию. Для правильного ввода выберите профессию из списка.");
-        // }
-    }
-
-    private void Prof_Name_OnFocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
-    {
-        MessageBox.Show("Вы неверно ввели профессию. Для правильного ввода выберите профессию из списка.");
-    }
     
     private void Prof_Name_OnLostFocus(object sender, RoutedEventArgs e)
     { 

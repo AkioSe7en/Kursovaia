@@ -40,4 +40,14 @@ public partial class Zapros1 : Window
         add.ShowDialog();
         CheckBD();
     }
+
+    private void Delete_OnClick(object sender, RoutedEventArgs e)
+    {
+        for (var i = 0; i < DataGrid.SelectedItems.Count; i++)
+        {
+            db.Vacancy.RemoveRange((Vacancy)DataGrid.SelectedItems[i]!);
+        }
+        db.SaveChanges();
+        CheckBD();
+    }
 }

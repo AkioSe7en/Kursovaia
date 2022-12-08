@@ -32,4 +32,39 @@ public partial class Zap1_Add : Window
         db.SaveChanges();
         DialogResult = true;
     }
+
+    private void Prof_Name_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        // var a =(Professions)Prof_Name.SelectedItem;
+        // if (db.Professions.Find(a)==null)
+        // {
+        //     MessageBox.Show("Вы неверно ввели профессию. Для правильного ввода выберите профессию из списка.");
+        // }
+    }
+
+    private void Prof_Name_OnFocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+    {
+        MessageBox.Show("Вы неверно ввели профессию. Для правильного ввода выберите профессию из списка.");
+    }
+    
+    private void Prof_Name_OnLostFocus(object sender, RoutedEventArgs e)
+    { 
+        int count = 0;
+        if (Prof_Name.Text != "")
+        {
+            foreach (var z in db.Professions)
+            {
+                if (z.Prof_Name == Prof_Name.Text)
+                {
+                    count++;
+                    break;
+                }
+            }
+
+            if (count == 0)
+            {
+                MessageBox.Show("Вы неверно ввели профессию. Для правильного ввода выберите профессию из списка.");
+            }
+        }
+    }
 }

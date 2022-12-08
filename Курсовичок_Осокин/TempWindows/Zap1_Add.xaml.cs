@@ -25,8 +25,7 @@ public partial class Zap1_Add : Window
         {
           Salary  = Double.Parse(Salary.Text),
           Employers = db.Employers.Where(p=>p.Name_Org==Name_Org_Org).Where(p=>p.FIO==Name_Org_FIO).ToList()[0],
-          //Professions = db.Professions.Where(p=>p.Prof_Name == Prof_Name.SelectedItem).ToList()[0]
-          Professions = (Professions)Prof_Name.SelectedItem
+          Professions = (Professions)Prof_Name.SelectedItem,
         };
         db.Vacancy.Add(vac);
         db.SaveChanges();

@@ -8,16 +8,15 @@
         Title="Zap1_Add" Height="450" Width="800">
     <Grid Margin="20" Name="Grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.35*"/>
+            <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.45*"/>
+            <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
         
         <Button Grid.Column="0" Grid.Row="999" Click="OK_OnClick" Name="OK">OK</Button>
@@ -26,13 +25,10 @@
         <TextBlock Grid.Column="0" Grid.Row="0" Margin="5" Name="TextBlock_Prof_Name" Text="Вакансия:" TextAlignment="Right" FontSize="25"/>
         <ComboBox Grid.Column="2" Grid.Row="0" Margin="5" Name="Prof_Name" IsEditable="True" DisplayMemberPath="Prof_Name" LostFocus="Prof_Name_OnLostFocus" FontSize="25"/>
         
-        <TextBlock Grid.Column="0" Grid.Row="1" Margin="5" Name="TextBlock_Salary" Text="Зарплата:" TextAlignment="Right" FontSize="25"/>
+        <TextBlock Grid.Column="0" Grid.Row="1" Margin="5" Name="TextBlock_Salary" TextWrapping="Wrap" Text="Зарплата:" TextAlignment="Right" FontSize="25"/>
         <TextBox Grid.Column="2" Grid.Row="1" Margin="5" Name="Salary" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.Row="2" Margin="5" Name="TextBlock_Name_Org" Text="Работодатель:" TextAlignment="Right" FontSize="25"/>
         <ComboBox Grid.Column="2" Grid.Row="2" Margin="5" Name="Name_Org" FontSize="25"/>
-        
-        <TextBlock Grid.Column="0" Grid.Row="3" Margin="5" Name="TextBlock_Activ" Text="Активность анкеты:" TextAlignment="Right"  VerticalAlignment="Center" FontSize="25"/>
-        <CheckBox Grid.Column="2" Grid.Row="3" Margin="5" Name="Activ" IsChecked="True" VerticalAlignment="Center"/>
     </Grid>
 </Window>

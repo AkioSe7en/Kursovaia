@@ -23,8 +23,6 @@ public partial class Zapros1 : Window
         Zapros = db.Vacancy.Include(u=>u.Employers).Include(z=>z.Professions)
             .Where(p=>EF.Functions.Like(p.Professions.Prof_Name, "%"+Like+"%")).Where(u=>u.Employers.Activ==true)
             .ToList();
-       // Prof = db.Professions.Include(p=>p.Vacancies).ToList();
-       // Combo123.ItemsSource = Zapros;
         DataGrid.ItemsSource = Zapros;  
     }
     

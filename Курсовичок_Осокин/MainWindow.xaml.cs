@@ -1,7 +1,4 @@
-﻿using Куровичок_Осокин.Requests;
-using Куровичок_Осокин.TempWindows;
-
-namespace Курсовичок_Осокин
+﻿namespace Курсовичок_Осокин
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -20,6 +17,87 @@ namespace Курсовичок_Осокин
             }
         }
 
+        //_______________Вкладка "Формы"_________________________________________
+        private void ButProf_OnClick(object sender, RoutedEventArgs e)
+        {
+            Prof win = new Prof();
+            win.Show();
+        }
+        private void ButApp_OnClick(object sender, RoutedEventArgs e)
+        {
+            App win = new App();
+            win.Show();
+        }
+
+        private void ButAppAll_OnClick(object sender, RoutedEventArgs e)
+        {
+            AppAll win = new AppAll();
+            win.Show();
+        }
+
+        private void ButDip_OnClick(object sender, RoutedEventArgs e)
+        {
+            Dip win = new Dip();
+            win.Show();
+        }
+
+        private void ButEmp_OnClick(object sender, RoutedEventArgs e)
+        {
+            Emp win = new Emp();
+            win.Show();
+        }
+
+        private void ButEmpAll_OnClick(object sender, RoutedEventArgs e)
+        {
+            EmpAll win = new EmpAll();
+            win.Show();
+        }
+
+        private void ButVac_OnClick(object sender, RoutedEventArgs e)
+        {
+            Vac win = new Vac();
+            win.Show();
+        }
+     
+        //_________________Вкладка "Запросы"______________________________
+        private void Zap1_OnClick(object sender, RoutedEventArgs e)
+        {
+
+            TempZap1 tempZap1 = new TempZap1();
+            tempZap1.ShowDialog();
+        }
+
+        private void Zap2_OnClick(object sender, RoutedEventArgs e)
+        {
+            TempZap2 tempZap2 = new TempZap2();
+            tempZap2.ShowDialog();
+        }
+
+        private void Zap3_OnClick(object sender, RoutedEventArgs e)
+        {
+            Zapros3 zap3 = new Zapros3();
+            zap3.Show();
+        }
+
+        private void Zap4_OnClick(object sender, RoutedEventArgs e)
+        {
+            Zapros4 zap4 = new Zapros4();
+            zap4.Show();
+        }
+
+        private void Zap5_OnClick(object sender, RoutedEventArgs e)
+        {
+            Zapros5 zap5 = new Zapros5();
+            zap5.Show();
+        }
+
+        private void Zap6_OnClick(object sender, RoutedEventArgs e)
+        {
+            Zapros6 zap6 = new Zapros6();
+            zap6.Show();
+        }
+        
+        //_____________________Вкладка "Функционал"__________________________________
         private void CreateBD_OnClick(object sender, RoutedEventArgs e)
         {
             if (db.Database.EnsureCreated() == false)
@@ -71,7 +149,7 @@ namespace Курсовичок_Осокин
                 MessageBox.Show("БД создана"); 
             } 
         }
-
+        
         private void DeleteBD_OnClick(object sender, RoutedEventArgs e)
         {
             if (db.Database.EnsureDeleted() == false)
@@ -84,43 +162,6 @@ namespace Курсовичок_Осокин
                 MessageBox.Show("БД удалена");
             }
             
-        }
-
-        private void Zap1_OnClick(object sender, RoutedEventArgs e)
-        {
-
-            TempZap1 tempZap1 = new TempZap1();
-            tempZap1.ShowDialog();
-        }
-
-        private void Zap2_OnClick(object sender, RoutedEventArgs e)
-        {
-            TempZap2 tempZap2 = new TempZap2();
-            tempZap2.ShowDialog();
-        }
-
-        private void Zap3_OnClick(object sender, RoutedEventArgs e)
-        {
-            Zapros3 zap3 = new Zapros3();
-            zap3.Show();
-        }
-
-        private void Zap4_OnClick(object sender, RoutedEventArgs e)
-        {
-            Zapros4 zap4 = new Zapros4();
-            zap4.Show();
-        }
-
-        private void Zap5_OnClick(object sender, RoutedEventArgs e)
-        {
-            Zapros5 zap5 = new Zapros5();
-            zap5.Show();
-        }
-
-        private void Zap6_OnClick(object sender, RoutedEventArgs e)
-        {
-            Zapros6 zap6 = new Zapros6();
-            zap6.Show();
         }
     }
 }

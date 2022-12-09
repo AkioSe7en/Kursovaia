@@ -20,3 +20,5 @@ global using System.ComponentModel.DataAnnotations;
 global using Курсовичок_Осокин.Tables;
 global using Курсовичок_Осокин;
 global using Куровичок_Осокин.TempWindows;
+global using Куровичок_Осокин.Forms;
+global using Куровичок_Осокин.Requests;

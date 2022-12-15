@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Куровичок_Осокин.TempWindows;
+﻿namespace Куровичок_Осокин.TempWindows;
 
 public partial class Zap1_Change : Window
 {
@@ -32,25 +30,17 @@ public partial class Zap1_Change : Window
         }
         
         Salary.Text = ((Vacancy)Selected).Salary.ToString();
-        
+        Activ.IsChecked = ((Vacancy)Selected).Activ;
     }
 
     private void OK_OnClick(object sender, RoutedEventArgs e)
     {
         string Name_Org_Org = (string)((TextBlock)(((StackPanel)Name_Org.SelectedItem).Children[0])).Text; //Тройное преобразование чтобы вытащить из комбобокса оргу
         string Name_Org_FIO = (string)((TextBlock)(((StackPanel)Name_Org.SelectedItem).Children[1])).Text; //Тройное преобразование чтобы вытащить из комбобокса фио
-        Vacancy vac = new Vacancy
-        {
-          Salary  = Double.Parse(Salary.Text),
-          Employers = db.Employers.Where(p=>p.Name_Org==Name_Org_Org).Where(p=>p.FIO==Name_Org_FIO).ToList()[0],
-          Professions = (Professions)Prof_Name.SelectedItem,
-        };
-        //db.Vacancy.Update(vac);
-
         ((Vacancy)sel).Salary = Double.Parse(Salary.Text);
         ((Vacancy)sel).Employers = db.Employers.Where(p => p.Name_Org == Name_Org_Org).Where(p => p.FIO == Name_Org_FIO).ToList()[0];
         ((Vacancy)sel).Professions = (Professions)Prof_Name.SelectedItem;
-        
+        ((Vacancy)sel).Activ = Activ.IsChecked.Value;
         db.SaveChanges();
         DialogResult = true;
     }

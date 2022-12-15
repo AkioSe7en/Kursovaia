@@ -7,4 +7,22 @@ public class Vacancy
     public Employers Employers { get; set; }
     public DateTime Date_Create { get; } = DateTime.Now;
     public double Salary { get; set; }
+    private bool activ = true;
+    public bool Activ
+    {
+        get { return activ;}
+        set
+        {
+            activ = value;
+            if (activ == false)
+            {
+                DateDelete = DateTime.Now;
+            }
+            else
+            {
+                DateDelete = null;
+            }
+        }
+    }
+    public DateTime? DateDelete { get; set; }
 }

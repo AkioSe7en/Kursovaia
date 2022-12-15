@@ -26,6 +26,7 @@ public partial class Zap1_Add : Window
           Salary  = Double.Parse(Salary.Text),
           Employers = db.Employers.Where(p=>p.Name_Org==Name_Org_Org).Where(p=>p.FIO==Name_Org_FIO).ToList()[0],
           Professions = (Professions)Prof_Name.SelectedItem,
+          Activ = Activ.IsChecked.Value,
         };
         db.Vacancy.Add(vac);
         db.SaveChanges();

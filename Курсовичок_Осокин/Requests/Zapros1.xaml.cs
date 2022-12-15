@@ -51,8 +51,15 @@ public partial class Zapros1 : Window
 
     private void Change_OnClick(object sender, RoutedEventArgs e)
     {
-        Zap1_Change change = new Zap1_Change(db, DataGrid.SelectedItem);
-        change.ShowDialog();
-        CheckBD();
+        if (DataGrid.SelectedItem != null)
+        {
+            Zap1_Change change = new Zap1_Change(db, DataGrid.SelectedItem);
+            change.ShowDialog();
+            CheckBD();
+        }
+        else
+        {
+            MessageBox.Show("Запись не выбрана");
+        }
     }
 }

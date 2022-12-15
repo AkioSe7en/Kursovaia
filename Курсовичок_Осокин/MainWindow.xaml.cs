@@ -112,7 +112,8 @@
                 new() { Prof_Name = "Кассир" },
                 new() { Prof_Name = "Грузчик" },
                 new() { Prof_Name = "Маляр" },
-                new() { Prof_Name = "Учитель" }
+                new() { Prof_Name = "Учитель" },
+                new() { Prof_Name = "Строитель" }
             };
             db.Professions.AddRange(Prof);
             db.SaveChanges();
@@ -162,6 +163,14 @@
                 MessageBox.Show("БД удалена");
             }
             
+        }
+
+        private void DeleteNoActiv_OnClick(object sender, RoutedEventArgs e)
+        {
+            int DelAp = db.Applicants.Where(p=>p.Activ==false).ExecuteDelete();
+            int DelEmp = db.Employers.Where(p=>p.Activ==false).ExecuteDelete();
+            int DelVac = db.Vacancy.Where(p=>p.Activ==false).ExecuteDelete();
+            MessageBox.Show("Удалено:\n"+DelAp+" анкет соискателей\n"+DelEmp+" анкет работодателей\n"+DelVac+" вакансий\n");
         }
     }
 }

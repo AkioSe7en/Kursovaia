@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -17,12 +18,12 @@
         </Grid.RowDefinitions>
         
         <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200">Создать запись</Button>
-        <Button Grid.Column="1" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200">Удалить запись</Button>
+        <Button Grid.Column="2" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200">Удалить запись</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="Change" Click="Change_OnClick" Width="200">Редактировать запись</Button>
         
-        <DataGrid Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+        <DataGrid Grid.ColumnSpan="3" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" IsEnabled="False" CanUserDeleteRows="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID вакансии" IsReadOnly="True" Binding="{Binding Path=Id_Vac, UpdateSourceTrigger=PropertyChanged}"/>
-                <!--<DataGridComboBoxColumn x:Name="Combo123" Header="Вак" DisplayMemberPath="prof.prof_name"></DataGridComboBoxColumn>-->
                 <DataGridTextColumn Header="Вакансия" Binding="{Binding Path=Professions.Prof_Name, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Зарплата" Binding="{Binding Path=Salary, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Дата создания" IsReadOnly="True" Binding="{Binding Path=Date_Create, UpdateSourceTrigger=PropertyChanged}"/>

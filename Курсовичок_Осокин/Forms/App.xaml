@@ -5,8 +5,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
         mc:Ignorable="d"
-        Title="App" Height="450" Width="800">
+        Title="Вакансии" Height="700" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <Button Name="Next" Grid.Column="4" Grid.Row="999" Click="Next_OnClick">Next</Button>
+        <Button Name="Prev" Grid.Column="3" Grid.Row="999" Click="Prev_OnClick">Prev</Button>
+        <Button Name="PrevAll" Grid.Column="2" Grid.Row="999" Click="PrevAll_OnClick">Первый</Button>
+        <Button Name="NextAll" Grid.Column="5" Grid.Row="999" Click="NextAll_OnClick">Последний</Button>
+        <Button Name="New" Grid.Column="0" Grid.Row="999" Click="New_OnClick">New</Button>
+        <Button Name="Del" Grid.Column="1" Grid.Row="999" Click="Del_OnClick">Delete</Button>
+        
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Margin="5" Text="ID:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0" Margin="5" TextWrapping="Wrap" Name="ID" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Margin="5" Text="Фамилия:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="1" Margin="5" TextWrapping="Wrap" Name="Familia" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Margin="5" Text="Имя:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="2" Margin="5" TextWrapping="Wrap" Name="Name" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="3" Margin="5" Text="Отчество:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="3" Margin="5" TextWrapping="Wrap" Name="Otchestvo" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Margin="5"  Text="Телефон:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="4" Margin="5" TextWrapping="Wrap" Name="Phone" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="5" Margin="5" Text="Email:" TextAlignment="Right" FontSize="25"/>
+        <TextBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="5" Margin="5" TextWrapping="Wrap" Name="Email" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" Margin="5" Text="Профессия:" TextAlignment="Right" FontSize="25"/>
+        <ComboBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="6" Margin="5" Name="Prof_Name" IsEditable="True" DisplayMemberPath="Prof_Name" FontSize="25"/>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="7" Margin="5" Text="Активность анкеты:" TextAlignment="Right"  VerticalAlignment="Center" FontSize="25"/>
+        <CheckBox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="7" Margin="5" Name="Activ" IsChecked="True" VerticalAlignment="Center"/>
+        
+        <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" Margin="5" TextAlignment="Right"  VerticalAlignment="Center">Дата удаления</TextBlock>
+        <TextBox Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="3" FontSize="25" IsEnabled="False"  Margin="5" Name="Date_Delete"></TextBox>
     </Grid>
 </Window>

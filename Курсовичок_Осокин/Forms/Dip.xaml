@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="Dip" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
         
+        <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200">Создать запись</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200">Удалить запись</Button>
+        
+        <DataGrid Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" IsReadOnly="True" Binding="{Binding Path=Applicants.ID_App, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Фамилия" IsReadOnly="True" Binding="{Binding Path=Applicants.Familia, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Имя" IsReadOnly="True" Binding="{Binding Path=Applicants.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Отчетство" IsReadOnly="True" Binding="{Binding Path=Applicants.Otchestvo, UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <DataGridTextColumn Header="Место получения" Binding="{Binding Path=Institution, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Специальность" Binding="{Binding Path=Specialties, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Дата получения" Binding="{Binding Path=Date_Receiving, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>    
+        </DataGrid>  
     </Grid>
 </Window>

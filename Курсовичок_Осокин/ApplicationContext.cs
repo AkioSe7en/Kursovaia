@@ -15,7 +15,7 @@ public class ApplicationContext : DbContext
         modelBuilder.Entity<Applicants>().HasKey(u => u.ID_App);
         modelBuilder.Entity<Employers>().HasKey(u => u.ID_Rab);
         modelBuilder.Entity<Diploma>().HasKey(u => u.ID_Dipl);
-        modelBuilder.Entity<Professions>().HasKey(u=>u.Prof_Name);
+        modelBuilder.Entity<Professions>().HasKey(u=>u.ProfessionsID);
         modelBuilder.Entity<Vacancy>().HasKey(u => u.Id_Vac);
     }
 

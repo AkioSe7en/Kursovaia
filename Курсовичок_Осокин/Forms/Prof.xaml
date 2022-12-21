@@ -5,8 +5,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
         mc:Ignorable="d"
-        Title="Prof" Height="450" Width="800">
+        Title="Prof" Height="450" Width="400">
     <Grid>
-        
+        <DataGrid ColumnWidth="*" Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" PreviewKeyDown="DataGrid_OnPreviewKeyDown" RowEditEnding="DataGrid_OnRowEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Наименование" Binding="{Binding Path=Prof_Name, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </DataGrid.Columns>    
+        </DataGrid>  
     </Grid>
 </Window>

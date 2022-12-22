@@ -144,7 +144,7 @@
             }
             else
             {
-                Users user = new Users { Login = "Admin", Password = "Admin", Level = "Консультант"};
+                Users user = new Users { Login = "Admin", Password = "Admin", Level = "2"};
                 db.Users.Add(user);
                 
                   var Prof = new List<Professions>

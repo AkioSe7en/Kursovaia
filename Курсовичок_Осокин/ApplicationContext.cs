@@ -7,7 +7,8 @@ public class ApplicationContext : DbContext
     public DbSet<Diploma> Diploma => Set<Diploma>();
     public DbSet<Vacancy> Vacancy => Set<Vacancy>();
     public DbSet<Professions> Professions => Set<Professions>();
-    
+    public DbSet<Users> Users => Set<Users>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Vacancy>().Property(p => p.Salary).HasPrecision(6, 2);
@@ -17,6 +18,7 @@ public class ApplicationContext : DbContext
         modelBuilder.Entity<Diploma>().HasKey(u => u.ID_Dipl);
         modelBuilder.Entity<Professions>().HasKey(u=>u.ProfessionsID);
         modelBuilder.Entity<Vacancy>().HasKey(u => u.Id_Vac);
+        modelBuilder.Entity<Users>().HasKey(u => u.UserID);
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

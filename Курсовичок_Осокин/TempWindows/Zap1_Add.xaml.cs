@@ -4,7 +4,7 @@ namespace Куровичок_Осокин.TempWindows;
 
 public partial class Zap1_Add : Window
 {
-    private ApplicationContext db;
+    ApplicationContext db = new ApplicationContext();
     public Zap1_Add(ApplicationContext db)
     {
         InitializeComponent();

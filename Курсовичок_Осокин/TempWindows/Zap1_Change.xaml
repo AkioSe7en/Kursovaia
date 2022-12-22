@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.TempWindows"
         mc:Ignorable="d"
-        Title="Zap1_Add" Height="450" Width="800">
+        Title="Изменение вакансии" Height="450" Width="800">
     <Grid Margin="20" Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.35*"/>

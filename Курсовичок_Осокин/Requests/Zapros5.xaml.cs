@@ -12,7 +12,7 @@ public partial class Zapros5 : Window
     }
     void CheckBD()
     {
-        var Zapros = db.Applicants.Where(p=>p.Activ==true).ToList();
+        var Zapros = db.Applicants.Where(p=>p.Activ==false).ToList();
         DataGrid.ItemsSource = Zapros;
     }
     

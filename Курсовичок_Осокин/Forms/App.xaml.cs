@@ -28,7 +28,7 @@ public partial class App : Window
             Prof_Name.ItemsSource = db.Professions.ToList();
             Prof_Name.SelectedItem = Zapros[number].Professions;
             if (Zapros[number].DateDelete!=null)
-            Date_Delete.Text = Zapros[number].DateDelete.Value.ToShortDateString();
+                Date_Delete.Text = Zapros[number].DateDelete?.ToShortDateString();
         }
     }
 

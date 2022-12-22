@@ -12,15 +12,13 @@ public partial class Login : Window
 
     private void Reg_OnClick(object sender, RoutedEventArgs e)
     {
-        // throw new NotImplementedException();
+        User_Add add = new User_Add();
+        add.ShowDialog();
     }
 
     private void Auth_OnClick(object sender, RoutedEventArgs e)
     {
-        var login = LoginBox.Text;
-        var password = PasswordBox.Text;
-        string errors = null;
-        var user = db.Users.Where(p => p.Login == LoginBox.Text).Where(p => p.Password == PasswordBox.Text)
+        var user = db.Users.Where(p => p.Login == LoginBox.Text).Where(p => p.Password == PasswordBox.Password)
             .ToList();
 
         if (user.Count==0)
@@ -32,13 +30,13 @@ public partial class Login : Window
             Login log;
             switch (user[0].Level)
             {
-                case "Консультант":
+                case "2":
                     MainWindow Kons = new MainWindow();
                     Kons.Show();
                     log = this;
                     log.Close();
                     break;
-                case "Рекрутер":
+                case "1":
                     Rekrut Rekr = new Rekrut();
                     Rekr.Show();
                     log = this;

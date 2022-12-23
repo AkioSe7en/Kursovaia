@@ -35,20 +35,17 @@ public partial class Login : Window
         }
         else
         {
-            Login log;
             switch (user[0].Level)
             {
                 case "2":
                     MainWindow Kons = new MainWindow();
                     Kons.Show();
-                    log = this;
-                    log.Close();
+                    Close();
                     break;
                 case "1":
                     Rekrut Rekr = new Rekrut();
                     Rekr.Show();
-                    log = this;
-                    log.Close();
+                    Close();
                     break;
                 default:
                     MessageBox.Show("Произошла непредвиденная ошибка. Обратитесь к системному администратору");

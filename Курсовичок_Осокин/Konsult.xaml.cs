@@ -9,12 +9,6 @@
         public MainWindow()
         {
             InitializeComponent();
-            // if (db.Database.CanConnect())
-            //     CheckBD.Text = "БД создана";
-            // else
-            // {
-            //     CheckBD.Text = "БД не создана";
-            // }
         }
 
         //_______________Вкладка "Формы"_________________________________________
@@ -136,79 +130,7 @@
         }
         
         //_____________________Вкладка "Функционал"__________________________________
-        /*private void CreateBD_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (db.Database.EnsureCreated() == false)
-            {
-                MessageBox.Show("БД уже создана. Если вы хотите ее пересоздать - удалите её и создайте снова.");   
-            }
-            else
-            {
-                Users user = new Users { Login = "Admin", Password = "Admin", Level = "2"};
-                db.Users.Add(user);
-                
-                  /*
-                  var Prof = new List<Professions>
-            {
-                new() { Prof_Name = "Кассир-администратор" },
-                new() { Prof_Name = "Кассир" },
-                new() { Prof_Name = "Грузчик" },
-                new() { Prof_Name = "Маляр" },
-                new() { Prof_Name = "Учитель" },
-                new() { Prof_Name = "Строитель" }
-            };
-            db.Professions.AddRange(Prof);
-            db.SaveChanges();
-
-            Applicants User = new Applicants
-            {
-                Familia = "Осокин", Name = "Тимофей", Otchestvo = "Сергеевич", Email = "tim_osokin@mail.ru", Activ = false,
-                Professions = db.Professions.Where(u => u.Prof_Name == "Кассир-администратор").ToList()[0]
-            };
-            Diploma Diplom = new Diploma
-            {
-                ID_Dipl = "1334501", Institution = "БГК", Specialties = "Информационные системы",
-                Date_Receiving = new DateTime(2023, 05, 29).ToShortDateString(), Applicants = User
-            };
-            db.Applicants.Add(User);
-            db.Diploma.Add(Diplom);
-            db.SaveChanges();
-
-            Employers employers = new Employers { FIO = "Куксин П.С.", Name_Org = "ООО Куриное царство", Address = "г. Бийск, ул. 8 Марта, дом 16", Email = "p_kocksin@mail.ru", Phone = "+79609776666"};
-            
-            Vacancy vacancy = new Vacancy
-            {
-                Employers = employers, Professions = db.Professions.Where(u => u.Prof_Name == "Кассир").ToList()[0],
-                Salary = 25000.00
-            };
-            db.Employers.Add(employers);
-            employers = new Employers{ FIO = "Кравцов И.Д.", Name_Org = "Соц защита", Address = "г. Бийск, ул. Ленина, дом 236", Phone = "+79609667755"};
-            db.Employers.Add(employers);
-            
-            db.Vacancy.Add(vacancy);
-            #1#
-                
-                db.SaveChanges();
-                CheckBD.Text = "БД создана";
-                MessageBox.Show("БД создана"); 
-            } 
-        }
-        
-        private void DeleteBD_OnClick(object sender, RoutedEventArgs e)
-        {
-            if (db.Database.EnsureDeleted() == false)
-            {
-               MessageBox.Show("База данных не найдена");
-            }
-            else
-            {
-                CheckBD.Text = "БД не создана";
-                MessageBox.Show("БД удалена");
-            }
-            
-        }*/
-
-        private void DeleteNoActiv_OnClick(object sender, RoutedEventArgs e)
+       private void DeleteNoActiv_OnClick(object sender, RoutedEventArgs e)
         {
             if (db.Database.CanConnect())
             {

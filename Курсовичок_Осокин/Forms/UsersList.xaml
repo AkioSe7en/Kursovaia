@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
         mc:Ignorable="d"
-        Title="UsersList" Height="450" Width="800">
+        Title="UsersList" Height="450" Width="800" Background="CornflowerBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -23,7 +23,7 @@
             </DataGrid.Columns>    
         </DataGrid>  
         
-        <Button Grid.Row="1" Grid.Column="0" Name="AddUser" Click="AddUser_OnClick">Добавить пользователя</Button>
-        <Button Grid.Row="1" Grid.Column="1" Name="DeleteUser" Click="DeleteUser_OnClick">Удалить пользователя</Button>
+        <Button Grid.Row="1" Grid.Column="0" Background="#f5d05f" Name="AddUser" Click="AddUser_OnClick">Добавить пользователя</Button>
+        <Button Grid.Row="1" Grid.Column="1" Background="#f5d05f" Name="DeleteUser" Click="DeleteUser_OnClick">Удалить пользователя</Button>
     </Grid>
 </Window>

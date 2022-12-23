@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
         mc:Ignorable="d"
-        Title="Список вакансий" Height="450" Width="800">
+        Title="Список вакансий" Height="450" Width="800" Background="CornflowerBlue">
     <Grid>
          <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -17,9 +17,9 @@
             <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
         
-        <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200">Создать запись</Button>
-        <Button Grid.Column="2" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200">Удалить запись</Button>
-        <Button Grid.Column="1" Grid.Row="1" Name="Change" Click="Change_OnClick" Width="200">Редактировать запись</Button>
+        <Button Grid.Column="0" Grid.Row="1" Name="Create" Click="Create_OnClick" Width="200" Background="#f5d05f">Создать запись</Button>
+        <Button Grid.Column="2" Grid.Row="1" Name="Delete" Click="Delete_OnClick" Width="200" Background="#f5d05f">Удалить запись</Button>
+        <Button Grid.Column="1" Grid.Row="1" Name="Change" Click="Change_OnClick" Width="200" Background="#f5d05f">Редактировать запись</Button>
         
         <DataGrid Grid.ColumnSpan="3" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserDeleteRows="False" CanUserAddRows="False">
             <DataGrid.Columns>

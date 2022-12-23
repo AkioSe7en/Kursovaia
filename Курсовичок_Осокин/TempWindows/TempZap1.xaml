@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.TempWindows"
         mc:Ignorable="d"
-        Title="Введите название вакансии" Height="300" Width="400">
+        Title="Введите название вакансии" Height="300" Width="400" Background="CornflowerBlue">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.20*"/>
@@ -19,7 +19,7 @@
         
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" FontSize="30" TextAlignment="Center">Введите название вакансии</TextBlock>
         <TextBox Grid.Row="1" Grid.ColumnSpan="2" Margin="20" Name="VacText"></TextBox>
-        <Button IsDefault="True" Name="Ok" Click="Ok_OnClick" Grid.Row="2" Grid.Column="0" Margin="5">Ок</Button>
-        <Button IsCancel="True" Grid.Row="2" Grid.Column="1" Margin="5">Отмена</Button>
+        <Button IsDefault="True" Name="Ok" Background="#f5d05f" Click="Ok_OnClick" Grid.Row="2" Grid.Column="0" Margin="5">Ок</Button>
+        <Button IsCancel="True" Grid.Row="2" Background="#f5d05f" Grid.Column="1" Margin="5">Отмена</Button>
     </Grid>
 </Window>

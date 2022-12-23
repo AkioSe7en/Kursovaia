@@ -15,7 +15,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Логин" Binding="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged}"/>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"/>

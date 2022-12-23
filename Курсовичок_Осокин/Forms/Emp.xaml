@@ -27,12 +27,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Button Name="Next" Margin="5" Background="#f5d05f" Grid.Column="4" Grid.Row="999" Click="Next_OnClick">Next</Button>
-        <Button Name="Prev" Margin="5" Background="#f5d05f" Grid.Column="3" Grid.Row="999" Click="Prev_OnClick">Prev</Button>
+        <Button Name="Next" Margin="5" Background="#f5d05f" Grid.Column="4" Grid.Row="999" Click="Next_OnClick">Следующий</Button>
+        <Button Name="Prev" Margin="5" Background="#f5d05f" Grid.Column="3" Grid.Row="999" Click="Prev_OnClick">Предыдущий</Button>
         <Button Name="PrevAll" Margin="5" Background="#f5d05f" Grid.Column="2" Grid.Row="999" Click="PrevAll_OnClick">Первый</Button>
         <Button Name="NextAll" Margin="5" Background="#f5d05f" Grid.Column="5" Grid.Row="999" Click="NextAll_OnClick">Последний</Button>
-        <Button Name="New" Margin="5" Background="#f5d05f" Grid.Column="0" Grid.Row="999" Click="New_OnClick">New</Button>
-        <Button Name="Del" Margin="5" Background="#f5d05f" Grid.Column="1" Grid.Row="999" Click="Del_OnClick">Delete</Button>
+        <Button Name="New" Margin="5" Background="#f5d05f" Grid.Column="0" Grid.Row="999" Click="New_OnClick">Новый</Button>
+        <Button Name="Del" Margin="5" Background="#f5d05f" Grid.Column="1" Grid.Row="999" Click="Del_OnClick" ToolTip="Если вы не хотите удалять немедленно, то снимите галочку Активность анкеты и она пометится на удаление">Удалить немедленно</Button>
         
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="5" Text="ID:" TextAlignment="Right" FontSize="25"/>

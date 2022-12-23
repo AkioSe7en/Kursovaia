@@ -16,20 +16,17 @@ public partial class App : Window
     
     void CheckBD()
     {
-        if (Zapros[number].ID_App != null)
-        {
-            ID.Text = Zapros[number].ID_App.ToString();
-            Familia.Text = Zapros[number].Familia;
-            Name.Text = Zapros[number].Name;
-            Otchestvo.Text = Zapros[number].Otchestvo;
-            Phone.Text = Zapros[number].Phone;
-            Email.Text = Zapros[number].Email;
-            Activ.IsChecked = Zapros[number].Activ;
-            Prof_Name.ItemsSource = db.Professions.ToList();
-            Prof_Name.SelectedItem = Zapros[number].Professions;
-            if (Zapros[number].DateDelete!=null)
-                Date_Delete.Text = Zapros[number].DateDelete?.ToShortDateString();
-        }
+        if (Zapros.Count > 0)
+            {
+                DataContext = Zapros[number];
+                Prof_Name.ItemsSource = db.Professions.ToList();
+                Prof_Name.SelectedItem = Zapros[number].Professions;
+            }
+            else
+            {
+                DataContext = null;
+                Prof_Name.SelectedItem = null;
+            }
     }
 
     private void Next_OnClick(object sender, RoutedEventArgs e)
@@ -75,10 +72,25 @@ public partial class App : Window
 
     private void Del_OnClick(object sender, RoutedEventArgs e)
     {
-        db.Applicants.Remove(Zapros[number]);
-        Zapros.RemoveAt(number);
-        number=0;
-        db.SaveChanges();
+        if (Zapros.Count > 0)
+        {
+            db.Applicants.Remove(Zapros[number]);
+            Zapros.RemoveAt(number);
+            number = 0;
+            db.SaveChanges();
+        }
+        CheckBD();
+        
+    }
+    private void OnLostFocus(object sender, RoutedEventArgs e)
+    {
+        if (Zapros.Count > 0)
+        {
+            Zapros[number].Professions = (Professions)Prof_Name.SelectedItem;
+            db.Applicants.UpdateRange(Zapros);
+            db.SaveChanges();
+        }
+
         CheckBD();
     }
 }

@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
         mc:Ignorable="d"
-        Title="Вакансии" Height="700" Width="800" Background="CornflowerBlue">
+        Title="Соискатели" Height="700" Width="800" Background="CornflowerBlue">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -28,39 +28,39 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Button Name="Next" Margin="5" Background="#f5d05f" Grid.Column="4" Grid.Row="999" Click="Next_OnClick">Next</Button>
-        <Button Name="Prev" Margin="5" Background="#f5d05f" Grid.Column="3" Grid.Row="999" Click="Prev_OnClick">Prev</Button>
+        <Button Name="Next" Margin="5" Background="#f5d05f" Grid.Column="4" Grid.Row="999" Click="Next_OnClick">Следующий</Button>
+        <Button Name="Prev" Margin="5" Background="#f5d05f" Grid.Column="3" Grid.Row="999" Click="Prev_OnClick">Предыдущий</Button>
         <Button Name="PrevAll" Margin="5" Background="#f5d05f" Grid.Column="2" Grid.Row="999" Click="PrevAll_OnClick">Первый</Button>
         <Button Name="NextAll" Margin="5" Background="#f5d05f" Grid.Column="5" Grid.Row="999" Click="NextAll_OnClick">Последний</Button>
-        <Button Name="New" Margin="5" Background="#f5d05f" Grid.Column="0" Grid.Row="999" Click="New_OnClick">New</Button>
-        <Button Name="Del" Margin="5" Background="#f5d05f" Grid.Column="1" Grid.Row="999" Click="Del_OnClick">Delete</Button>
+        <Button Name="New" Margin="5" Background="#f5d05f" Grid.Column="0" Grid.Row="999" Click="New_OnClick">Новый</Button>
+        <Button Name="Del" Margin="5" Background="#f5d05f" Grid.Column="1" Grid.Row="999" Click="Del_OnClick" ToolTip="Если вы не хотите удалять немедленно, то снимите галочку Активность анкеты и она пометится на удаление">Удалить немедленно</Button>
         
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Margin="5" Text="ID:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="0" Margin="5" TextWrapping="Wrap" Name="ID" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="0" Margin="5" Text="{Binding Path=ID_App, Mode=OneWay}" TextWrapping="Wrap" IsReadOnly="True" Name="ID" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="5" Text="Фамилия:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="1" Margin="5" TextWrapping="Wrap" Name="Familia" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="1" Margin="5" Text="{Binding Path=Familia}" LostFocus="OnLostFocus" TextWrapping="Wrap" Name="Familia" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Margin="5" Text="Имя:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="2" Margin="5" TextWrapping="Wrap" Name="Name" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="2" Margin="5" Text="{Binding Path=Name}" LostFocus="OnLostFocus" TextWrapping="Wrap" Name="Name" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" Margin="5" Text="Отчество:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="3" Margin="5" TextWrapping="Wrap" Name="Otchestvo" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="3" Margin="5" TextWrapping="Wrap" LostFocus="OnLostFocus" Text="{Binding Path=Otchestvo}" Name="Otchestvo" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" Margin="5"  Text="Телефон:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="4" Margin="5" TextWrapping="Wrap" Name="Phone" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="4" Margin="5" TextWrapping="Wrap" LostFocus="OnLostFocus" Text="{Binding Path=Phone}" Name="Phone" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" Text="Email:" TextAlignment="Right" FontSize="25"/>
-        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="5" Margin="5" TextWrapping="Wrap" Name="Email" FontSize="25"/>
+        <TextBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="5" Margin="5" TextWrapping="Wrap" LostFocus="OnLostFocus" Text="{Binding Path=Email}" Name="Email" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="6" Margin="5" Text="Профессия:" TextAlignment="Right" FontSize="25"/>
-        <ComboBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6" Margin="5" Name="Prof_Name" IsEditable="True" DisplayMemberPath="Prof_Name" FontSize="25"/>
+        <ComboBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="6" Margin="5" Name="Prof_Name" IsEditable="True" LostFocus="OnLostFocus" DisplayMemberPath="Prof_Name" FontSize="25"/>
         
         <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="7" Margin="5" Text="Активность анкеты:" TextAlignment="Right"  VerticalAlignment="Center" FontSize="25"/>
-        <CheckBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="7" Margin="5" Name="Activ" IsChecked="True" VerticalAlignment="Center"/>
+        <CheckBox Grid.Column="2" Grid.ColumnSpan="4" Grid.Row="7" Margin="5" Name="Activ" LostFocus="OnLostFocus" IsChecked="{Binding Path=Activ}" VerticalAlignment="Center"/>
         
         <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" FontSize="25" Margin="5" TextAlignment="Right"  VerticalAlignment="Center">Дата удаления</TextBlock>
-        <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4" FontSize="25" IsEnabled="False"  Margin="5" Name="Date_Delete"></TextBox>
+        <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="4" FontSize="25" IsEnabled="False" LostFocus="OnLostFocus" Text="{Binding Path=DateDelete}"  Margin="5" Name="Date_Delete"></TextBox>
     </Grid>
 </Window>

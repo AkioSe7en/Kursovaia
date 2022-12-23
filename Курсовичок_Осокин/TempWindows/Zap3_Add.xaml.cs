@@ -12,22 +12,29 @@ public partial class Zap3_Add : Window
 
     private void OK_OnClick(object sender, RoutedEventArgs e)
     {
-        Applicants app = new Applicants
+        if ((Professions)Prof_Name.SelectedItem != null && !String.IsNullOrWhiteSpace(Familia.Text) && !String.IsNullOrWhiteSpace(Name.Text) && !String.IsNullOrWhiteSpace(Otchestvo.Text))
         {
-            
-            Familia = Familia.Text,
-            Name = Name.Text,
-            Otchestvo = Otchestvo.Text,
-            Email = Email.Text,
-            Phone = Phone.Text,
-            Professions = (Professions)Prof_Name.SelectedItem,
-            Activ = Activ.IsChecked.Value
+            Applicants app = new Applicants
+            {
 
-        };
-        
-        db.Applicants.Add(app);
-        db.SaveChanges();
-        DialogResult = true;
+                Familia = Familia.Text,
+                Name = Name.Text,
+                Otchestvo = Otchestvo.Text,
+                Email = Email.Text,
+                Phone = Phone.Text,
+                Professions = (Professions)Prof_Name.SelectedItem,
+                Activ = Activ.IsChecked.Value
+
+            };
+
+            db.Applicants.Add(app);
+            db.SaveChanges();
+            DialogResult = true;
+        }
+        else
+        {
+            MessageBox.Show("Вы не ввели одно из обязательных полей");
+        }
     }
 
     private void Prof_Name_OnLostFocus(object sender, RoutedEventArgs e)

@@ -15,10 +15,7 @@ public partial class Emp : Window
     }
     void CheckBD()
     {
-        if (Zapros[number].ID_Rab != null)
-        {
-            this.DataContext = Zapros[number];
-        }
+        DataContext = Zapros.Count > 0 ? Zapros[number] : null;
     }
 
     private void Next_OnClick(object sender, RoutedEventArgs e)
@@ -64,18 +61,24 @@ public partial class Emp : Window
 
     private void Del_OnClick(object sender, RoutedEventArgs e)
     {
-        db.Employers.Remove(Zapros[number]);
-        Zapros.RemoveAt(number);
-        number=0;
-        db.SaveChanges();
-        CheckBD();
+        if (Zapros.Count > 0)
+        {
+            db.Employers.Remove(Zapros[number]);
+            Zapros.RemoveAt(number);
+            number = 0;
+            db.SaveChanges();
+            CheckBD();
+        }
+        else
+        {
+            CheckBD();
+        }
     }
 
     private void OnLostFocus(object sender, RoutedEventArgs e)
     {
         db.Employers.UpdateRange(Zapros);
         db.SaveChanges();
-        Zapros = db.Employers.ToList();
         CheckBD();
     }
 }

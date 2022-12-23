@@ -27,7 +27,7 @@ public partial class AppAll : Window
     {
         for (var i = 0; i < DataGrid.SelectedItems.Count; i++)
         {
-            db.Applicants.Remove((Applicants)DataGrid.SelectedItems[i]!);
+            ((Applicants)DataGrid.SelectedItems[i]).Activ = false;
         }
         db.SaveChanges();
         CheckBD();

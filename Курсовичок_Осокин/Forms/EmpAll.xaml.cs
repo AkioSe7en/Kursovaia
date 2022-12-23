@@ -27,7 +27,7 @@ public partial class EmpAll : Window
     {
         for (var i = 0; i < DataGrid.SelectedItems.Count; i++)
         {
-            db.Employers.Remove((Employers)DataGrid.SelectedItems[i]!);
+            ((Employers)DataGrid.SelectedItems[i]).Activ = false;
         }
         db.SaveChanges();
         CheckBD();

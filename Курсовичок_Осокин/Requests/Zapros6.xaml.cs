@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Куровичок_Осокин.Requests;
+﻿namespace Куровичок_Осокин.Requests;
 
 public partial class Zapros6 : Window
 {
@@ -27,7 +25,7 @@ public partial class Zapros6 : Window
     {
         for (var i = 0; i < DataGrid.SelectedItems.Count; i++)
         {
-            db.Employers.Remove((Employers)DataGrid.SelectedItems[i]!);
+            ((Employers)DataGrid.SelectedItems[i]).Activ = false;
         }
         db.SaveChanges();
         CheckBD();

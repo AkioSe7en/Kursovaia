@@ -1,6 +1,4 @@
-﻿using System.Windows;
-
-namespace Куровичок_Осокин.TempWindows;
+﻿namespace Куровичок_Осокин.TempWindows;
 
 public partial class Zap1_Add : Window
 {

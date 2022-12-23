@@ -1,6 +1,4 @@
-﻿using Куровичок_Осокин.TempWindows;
-
-namespace Куровичок_Осокин.Requests;
+﻿namespace Куровичок_Осокин.Requests;
 
 public partial class Zapros1 : Window
 {
@@ -21,7 +19,7 @@ public partial class Zapros1 : Window
     void CheckBD()
     {
         Zapros = db.Vacancy.Include(u=>u.Employers).Include(z=>z.Professions)
-            .Where(p=>EF.Functions.Like(p.Professions.Prof_Name, "%"+Like+"%")).Where(u=>u.Employers.Activ==true)
+            .Where(p=>EF.Functions.Like(p.Professions.Prof_Name, "%"+Like+"%")).Where(u=>u.Activ==true)
             .ToList();
         DataGrid.ItemsSource = Zapros;  
     }
@@ -43,7 +41,7 @@ public partial class Zapros1 : Window
     {
         for (var i = 0; i < DataGrid.SelectedItems.Count; i++)
         {
-            db.Vacancy.RemoveRange((Vacancy)DataGrid.SelectedItems[i]!);
+            ((Vacancy)DataGrid.SelectedItems[i]).Activ = false;
         }
         db.SaveChanges();
         CheckBD();

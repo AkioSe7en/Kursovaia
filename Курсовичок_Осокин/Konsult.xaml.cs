@@ -9,12 +9,12 @@
         public MainWindow()
         {
             InitializeComponent();
-            if (db.Database.CanConnect())
-                CheckBD.Text = "БД создана";
-            else
-            {
-                CheckBD.Text = "БД не создана";
-            }
+            // if (db.Database.CanConnect())
+            //     CheckBD.Text = "БД создана";
+            // else
+            // {
+            //     CheckBD.Text = "БД не создана";
+            // }
         }
 
         //_______________Вкладка "Формы"_________________________________________
@@ -136,7 +136,7 @@
         }
         
         //_____________________Вкладка "Функционал"__________________________________
-        private void CreateBD_OnClick(object sender, RoutedEventArgs e)
+        /*private void CreateBD_OnClick(object sender, RoutedEventArgs e)
         {
             if (db.Database.EnsureCreated() == false)
             {
@@ -186,7 +186,7 @@
             db.Employers.Add(employers);
             
             db.Vacancy.Add(vacancy);
-            */
+            #1#
                 
                 db.SaveChanges();
                 CheckBD.Text = "БД создана";
@@ -206,7 +206,7 @@
                 MessageBox.Show("БД удалена");
             }
             
-        }
+        }*/
 
         private void DeleteNoActiv_OnClick(object sender, RoutedEventArgs e)
         {

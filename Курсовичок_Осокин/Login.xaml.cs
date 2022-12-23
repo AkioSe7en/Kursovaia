@@ -8,6 +8,14 @@ public partial class Login : Window
     public Login()
     {
         InitializeComponent();
+        if (db.Database.EnsureCreated()==false)
+        {}
+        else
+        {
+            Users user = new Users { Login = "Admin", Password = "Admin", Level = "2" };
+            db.Users.Add(user);
+            db.SaveChanges();
+        }
     }
 
     private void Reg_OnClick(object sender, RoutedEventArgs e)

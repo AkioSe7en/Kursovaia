@@ -1,0 +1,29 @@
+﻿<Window x:Class="Куровичок_Осокин.Forms.UsersList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Куровичок_Осокин.Forms"
+        mc:Ignorable="d"
+        Title="UsersList" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.15*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="DataGrid" AutoGenerateColumns="False" RowEditEnding="DataGrid_OnRowEditEnding" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" Binding="{Binding Path=Login, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Уровень доступа (1 - рекрутер, 2 - консультант)" Binding="{Binding Path=Level, UpdateSourceTrigger=PropertyChanged}"/>
+            </DataGrid.Columns>    
+        </DataGrid>  
+        
+        <Button Grid.Row="1" Grid.Column="0" Name="AddUser" Click="AddUser_OnClick">Добавить пользователя</Button>
+        <Button Grid.Row="1" Grid.Column="1" Name="DeleteUser" Click="DeleteUser_OnClick">Удалить пользователя</Button>
+    </Grid>
+</Window>

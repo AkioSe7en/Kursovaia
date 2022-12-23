@@ -147,6 +147,7 @@
                 Users user = new Users { Login = "Admin", Password = "Admin", Level = "2"};
                 db.Users.Add(user);
                 
+                  /*
                   var Prof = new List<Professions>
             {
                 new() { Prof_Name = "Кассир-администратор" },
@@ -185,6 +186,7 @@
             db.Employers.Add(employers);
             
             db.Vacancy.Add(vacancy);
+            */
                 
                 db.SaveChanges();
                 CheckBD.Text = "БД создана";
@@ -216,6 +218,12 @@
                 MessageBox.Show("Удалено:\n" + DelAp + " анкет соискателей\n" + DelEmp + " анкет работодателей\n" +
                                 DelVac + " вакансий\n");
             }
+        }
+
+        private void Users_OnClick(object sender, RoutedEventArgs e)
+        {
+            UsersList adduser = new UsersList();
+            adduser.Show();
         }
     }
 }

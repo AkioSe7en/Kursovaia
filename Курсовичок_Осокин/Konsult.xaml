@@ -97,10 +97,10 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Name="CheckBD"/>
-                    <Button Grid.Row="1" Grid.Column="0" Name="CreateBD" Click="CreateBD_OnClick">Создать БД</Button>   
-                    <Button Grid.Row="1" Grid.Column="1" Name="DeleteBD" Click="DeleteBD_OnClick">Удалить БД</Button>
-                    <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Name="DeleteNoActiv" Click="DeleteNoActiv_OnClick">Удалить все записи с сроком неактива 3+ месяца</Button>
-                    
+                    <Button Grid.Row="1" Grid.Column="0" Name="CreateBD" Margin="5" Click="CreateBD_OnClick">Создать БД</Button>   
+                    <Button Grid.Row="1" Grid.Column="1" Name="DeleteBD" Margin="5" Click="DeleteBD_OnClick">Удалить БД</Button>
+                    <Button Grid.Row="2" Grid.Column="0" Name="DeleteNoActiv" Margin="5" Click="DeleteNoActiv_OnClick">Удалить все записи с сроком неактива 3+ месяца</Button>
+                    <Button Grid.Row="2" Grid.Column="1" Name="users" Margin="5" Click="Users_OnClick">Добавление/изменение пользователей</Button>
                 </Grid>
             </TabItem>          
         </TabControl>
